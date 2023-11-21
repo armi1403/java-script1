@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1 id="nadpis">Zadej slovo:</h1>
+<input type="text" id="input">
+<button id="tlacitko">Hádej</button>
+<h2>Seznam slov:</h2>
+
+<p id="text"></p>
+<button id = "tlacitko2">Popelka</button>
+
+<h3>Krátká slova:</h3>
+<h3>Dlouhá slova:</h3>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector("#input"),
+      tlacitko = document.querySelector("#tlacitko"),
+      text = document.querySelector("#text"),
+      tlacitko2 = document.querySelector("#tlacitko2")
+
+      
+      
+      
+      
+      
+      let odpoved = []
+      let hadaneSlovo = [Math.floor(Math.random)]
+      
+      
+        
+      
+      
+      
+     
+      tlacitko.addEventListener("click", slovo)
+
+      function slovo() {
+        odpoved.push (input.value)
+
+        text.innerHTML = ""
+        for (let i = 0; i < odpoved.length; i++) {
+            text.innerText += odpoved[i] + "\n"
+        }
+
+
+      }
+
+      
+
+      
+      
+      
+     
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark mode</title>
+</head>
+<body>
+
+    <div class="div">
+        <h1 class="nadpis1" >Dark mode</h1>
+        <h2 class="nadpis2">Zhasneš nebo co teda </h2>
+        <button class="klik">jsem línej</button>
+    </div>
+
+        <img class="moon"src= "moon.png"alt=""/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+        body{
+            background-color: #FFD820;
+        }
+
+        .nadpis1{
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .nadpis2{
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+        .div{
+            text-align: center;
+            position: relative;
+        }
+
+        .moon{
+            height: 100px;
+            display: inline;
+            position: relative;
+            text-align: left;
+            top: -120px;
+        }
+
+        .klik{
+            background-color: #2CD9E6;
+        }
+   
+    </style>
+       
+</body>
+
+</html>
+<script >
+    let nadpis1 = document.querySelector(".nadpis1")
+    let moon = document.querySelector(".moon")
+    let nadpis2 = document.querySelector(".nadpis2")
+    let klik = document.querySelector(".klik")
+
+   
+    moon.addEventListener("click", zmenNadpis)
+   
+    function zmenNadpis() {
+        document.body.style.backgroundColor = "#0F62F2";
+        nadpis1.style.color = "white";
+        nadpis2.style.color = "white";
+        klik.style.backgroundColor = "#FFD820";
+    }</script>
+    </body>
+</html>

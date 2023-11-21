@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        
+    </head>
+    
+
+    <body>
+
+    <h1>Hádej nebo něco</h1>
+    <button id="tlacitko">Hádej</button>
+    <input type="text" id="input" />
+    <p id="text"></p>
+    <h2>Počet pokusů :</h2>
+    <h3 id="pokusy"></h3>
+    <img src="obrazek1.png" alt="" id="obrazek1" />
+    <img src="obrazek2 (2).png" alt="" id="obrazek2" />
+    <img src="obrazek3 (2).png" alt="" id="obrazek3" />
+    <img src="obrazek4 (2).png" alt="" id="obrazek4" />
+    <img src="obrazek5.png" alt="" id="obrazek5" />
+
+
+        <style>
+            #obrazek1 {
+                display: none;
+            }
+            #obrazek2 {
+                display: none;
+            }
+            #obrazek3 {
+                display: none;
+            }
+            #obrazek4 {
+                display: none;
+            }
+            #obrazek5 {
+                display: none;
+            }
+        </style>
+
+        <script>
+            // volíme části html
+            const input = document.querySelector("#input"),
+                tlacitko = document.querySelector("#tlacitko"),
+                out = document.querySelector("#out"),
+                text = document.querySelector("#text"),
+                pokusy = document.querySelector("#pokusy"),
+                obrazek1 = document.querySelector("#obrazek1"),
+                obrazek2 = document.querySelector("#obrazek2"),
+                obrazek3 = document.querySelector("#obrazek3"),
+                obrazek4 = document.querySelector("#obrazek4"),
+                obrazek5 = document.querySelector("#obrazek5")
+
+            // seznam slov
+            const seznamSlov = ["hokus", "pokus", "agama"]
+
+            // ze seznamu vybíráme nahodné slovo
+            let hadaneSlovo =
+                seznamSlov[Math.floor(Math.random() * seznamSlov.length)]
+
+            // vypsané slovo do konzole
+            console.log(hadaneSlovo)
+
+            // array odpověď
+            let odpoved = []
+            let pocetPokusu = 0
+            let uhodnuto = false
+
+            // za každé písmeno podtržítko do odpovědi
+            for (let i = 0; i < hadaneSlovo.length; i++) {
+                odpoved[i] = "_"
+            }
+
+            // každé písmeno odpovědi vypíše do html
+            for (let i = 0; i < odpoved.length; i++) {
+                text.innerText += odpoved[i]
+            }
+
+            tlacitko.addEventListener("click", hadani)
+
+            function hadani() {
+                uhodnuto = false
+                // input z html a přidáme ho proměnné písmeno
+                let pismeno = input.value
+                input.value = ""
+
+                // porovnáme každé písmeno hádaného slova s písmenem vypsaným
+                // pokud se rovnají vypíše se do odpovědi
+                for (let i = 0; i < hadaneSlovo.length; i++) {
+                    if (pismeno === hadaneSlovo[i]) {
+                        odpoved[i] = pismeno
+                        uhodnuto = true
+                    }
+                }
+
+                if (uhodnuto === false) {
+                    pocetPokusu++
+                    pokusy.innerText = pocetPokusu
+                    
+                    if (pocetPokusu === 1) {
+                        obrazek1.style.display = "block"
+                    } else if (pocetPokusu === 2) {
+                        obrazek1.style.display = "none"
+                        obrazek2.style.display = "block"
+                    } else if (pocetPokusu === 3) {
+                        obrazek2.style.display = "none"
+                        obrazek3.style.display = "block"
+                    } else if (pocetPokusu === 4) {
+                        obrazek3.style.display = "none"
+                        obrazek4.style.display = "block"
+                    } else if (pocetPokusu === 5) {
+                        obrazek4.style.display = "none"
+                        obrazek5.style.display = "block"
+                    }
+
+
+
+                }
+
+                text.innerText = ""
+
+                // každé písmeno z odpovědi vypíše do html
+                for (let i = 0; i < odpoved.length; i++) {
+                    text.innerText += odpoved[i]
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nadšený student</title>
+    </head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+        body {
+            text-align: center;
+        }
+
+        #nadpis {
+            font-family: "Secular One", serif;
+        }
+
+        .obr {
+            position: absolute;
+            aspect-ratio: auto;
+            height: 50px;
+            top: 30px;
+            right: 30px;
+        }
+
+        .img {
+            height: 400px;
+            aspect-ratio: auto;
+            margin: 10px;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .skola {
+            display: none;
+        }
+        .prazdniny {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="prazdniny">
+            <div class="wrapper">
+                <h1 id="nadpis">Deník</h1>
+                <p id="text">
+                    Začalo léto stejně tak rychle jak skončilo. Bylo teplíčko a
+                    Marián ležel na pláži v Tunisku. Najednou velice rychle
+                    uběhl čas a byl jsem na Slovensku. Stejně rychle jsem se
+                    dostal ze Slovesnka zpět do Prahy a tady jsem chodil do
+                    práce až do rychlého konce léta.
+                </p>
+                <img
+                    class="img"
+                    id="skolaa"
+                    src="https://www.flytap.com/-/media/Flytap/new-tap-pages/on-board/discover-the-fleet/slider/airbus-a321-200lr-slide-975x435.png?w=975&h=330&op=c"
+                    alt=""
+                />
+                <button id="tlacitko">Klikni</button>
+            </div>
+            <img
+                class="obr"
+                id="slunce"
+                src="http://hedwig.cz/wp-content/uploads/2014/07/slunicko.png"
+                alt=""
+            />
+        </div>
+
+        <div class="skola">
+            <div class="wrapper">
+                <h1 id="nadpis">Neco</h1>
+                <p id="text">
+                    kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+                </p>
+                <img
+                    class="img"
+                    src="https://cdn.myshoptet.com/usr/www.trabuccofishing.cz/user/shop/big/44957_vizion-hlinikova-lod-600.png?64298733"
+                    alt=""
+                    id="lod"
+                />
+            </div>
+
+            <img
+                class="obr"
+                id="domecek"
+                src="https://obrazky.superia.cz/nahled-velky/domecek.png"
+                alt=""
+            />
+        </div>
+    </body>
+    <script>
+        let slunce = document.querySelector("#slunce")
+        let domecek = document.querySelector("#domecek")
+        let skola = document.querySelector(".skolaa")
+        let lod = document.querySelector(".lod")
+
+        slunce.addEventListener("click", zmenSlunicko)
+        domecek.addEventListener("click", zmenDomecek)
+
+        function zmenSlunicko() {
+            slunce.style.display = "none"
+            domecek.style.dsiplay = "block"
+            console.log("ahoj")
+        }
+
+        function zmenDomecek() {
+            slunce.style.display = "block"
+            domecek.style.display = "none"
+        }
+    </script>
+</html>
